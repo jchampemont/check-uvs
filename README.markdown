@@ -12,3 +12,8 @@ Gem (`sudo apt-get install rubygems` ou equivalent...)
 # Lancement 
 
 `ruby check_uvs.rb`
+
+# ToDo
+
+* Gérer les timeout serveur
+* Gérer les timeout login

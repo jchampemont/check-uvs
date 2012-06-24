@@ -17,10 +17,12 @@ a.get('https://extranet.utbm.fr/Application/PageUtilisateur/Generique/Authentifi
   while(true) do
     # Clicking results link
     results_page = a.click(menu_page.link_with(:text => 'Résultats semestriels'))
+    t = Time.new
     # Dirty-way clearing terminal
     system("clear")
     # Finding courses table
     results_page.search("//table[@id='ctl00_ContentPlaceHolder1_ResultatUv']").each do |table|
+      puts "Dernière vérification : " + t.strftime("%H:%M:%S")
       # For each row (= course)
       table.search("./tr[contains(@class, 'TableauListingLigne')]").each do |tr|
         content = tr.search("./td")
